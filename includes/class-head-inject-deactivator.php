@@ -3,7 +3,7 @@
 /**
  * Fired during plugin deactivation
  *
- * @link       http://example.com
+ * @link       https://praveendias1180.github.io
  * @since      1.0.0
  *
  * @package    Head_Inject
@@ -18,7 +18,7 @@
  * @since      1.0.0
  * @package    Head_Inject
  * @subpackage Head_Inject/includes
- * @author     Your Name <email@example.com>
+ * @author     Praveen Dias <praveendias1180@gmail.com>
  */
 class Head_Inject_Deactivator {
 

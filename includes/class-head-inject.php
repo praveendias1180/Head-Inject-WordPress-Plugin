@@ -6,7 +6,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       http://example.com
+ * @link       https://praveendias1180.github.io
  * @since      1.0.0
  *
  * @package    Head_Inject
@@ -25,7 +25,7 @@
  * @since      1.0.0
  * @package    Head_Inject
  * @subpackage Head_Inject/includes
- * @author     Your Name <email@example.com>
+ * @author     Praveen Dias <praveendias1180@gmail.com>
  */
 class Head_Inject {
 
@@ -67,8 +67,8 @@ class Head_Inject {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'Head_Inject_VERSION' ) ) {
-			$this->version = Head_Inject_VERSION;
+		if ( defined( 'HEAD_INJECT_VERSION' ) ) {
+			$this->version = HEAD_INJECT_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}

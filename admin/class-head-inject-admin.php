@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       http://example.com
+ * @link       https://praveendias1180.github.io
  * @since      1.0.0
  *
  * @package    Head_Inject
@@ -18,7 +18,7 @@
  *
  * @package    Head_Inject
  * @subpackage Head_Inject/admin
- * @author     Your Name <email@example.com>
+ * @author     Praveen Dias <praveendias1180@gmail.com>
  */
 class Head_Inject_Admin {
 
