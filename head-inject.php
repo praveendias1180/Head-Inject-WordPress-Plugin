@@ -35,13 +35,13 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'Head_Inject_VERSION', '1.0.0' );
+define( 'HEAD_INJECT_VERSION', '1.0.0' );
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-head-inject-activator.php
  */
-function activate_Head_Inject() {
+function activate_head_inject() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-head-inject-activator.php';
 	Head_Inject_Activator::activate();
 }
@@ -50,13 +50,13 @@ function activate_Head_Inject() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-head-inject-deactivator.php
  */
-function deactivate_Head_Inject() {
+function deactivate_head_inject() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-head-inject-deactivator.php';
 	Head_Inject_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_Head_Inject' );
-register_deactivation_hook( __FILE__, 'deactivate_Head_Inject' );
+register_activation_hook( __FILE__, 'activate_head_inject' );
+register_deactivation_hook( __FILE__, 'deactivate_head_inject' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -73,10 +73,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-head-inject.php';
  *
  * @since    1.0.0
  */
-function run_Head_Inject() {
+function run_head_inject() {
 
 	$plugin = new Head_Inject();
 	$plugin->run();
 
 }
-run_Head_Inject();
+run_head_inject();
