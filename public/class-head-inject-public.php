@@ -100,4 +100,18 @@ class Head_Inject_Public {
 
 	}
 
+	/**
+	 * Inject saved text from the admin area
+	 *
+	 * @return  null  echos the text to head area without escaping
+	 */	
+	public function head_injection(){
+		/**
+		 * Get Head Injection Settings
+		 *
+		 * @var textarea Saved text from admin area
+		 */
+		$setting = get_option('head_inject_setting');
+		echo isset( $setting ) ? $setting : '';
+	}
 }

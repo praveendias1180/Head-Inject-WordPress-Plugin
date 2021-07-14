@@ -156,6 +156,8 @@ class Head_Inject {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'head_inject_settings_init' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_menu_page' );
 
 	}
 
@@ -172,6 +174,7 @@ class Head_Inject {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_action( 'wp_head', $plugin_public, 'head_injection', 1 );
 
 	}
 
