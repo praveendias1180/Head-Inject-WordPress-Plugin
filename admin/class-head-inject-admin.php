@@ -100,4 +100,79 @@ class Head_Inject_Admin {
 
 	}
 
+	/**
+	 * [head_inject_settings_init description]
+	 *
+	 * @return  [type]  [return description]
+	 */
+	function head_inject_settings_init() {
+
+		/**
+		 * Register a Setting
+		 */
+		register_setting('headinjectgroup', 'head_inject_setting');
+	 
+		/**
+		 * Register a Settings Section
+		 */		
+		add_settings_section(
+			'head_inject_settings_section_1',
+			'Head Inject Settings Section 1', 
+			array($this, 'head_inject_settings_section_callback_1'),
+			'headinjectgroup'
+		);
+	 
+		/**
+		 * Add Settings Field to Settings Section
+		 */
+		add_settings_field(
+			'head_inject_settings_field',
+			'Head Inject Setting Field 1', 
+			array($this, 'head_inject_settings_field_callback_1'),
+			'headinjectgroup',
+			'head_inject_settings_section_1'
+		);
+	}
+
+	/**
+	 * [head_inject_settings_section_callback_1 description]
+	 *
+	 * @return  [type]  [return description]
+	 */
+	public function head_inject_settings_section_callback_1() {
+		do_action( 'qm/debug', 'inside settings section callback!' );
+		echo '<p>Head Inject Section - Paste Your Code Here.</p>';
+	}
+	
+	/**
+	 * [head_inject_settings_field_callback_1 description]
+	 *
+	 * @return  [type]  [return description]
+	 */
+	public function head_inject_settings_field_callback_1() {
+		$setting = get_option('head_inject_setting');
+		?>
+		<textarea id="w3review" name="head_inject_setting" rows="10" cols="50"><?php echo isset( $setting ) ? esc_attr( $setting ) : ''; ?></textarea>
+		<?php
+	}	
+
+	/**
+	 * Add an Admin Menu to manage settings.
+	 * 
+	 * @since	1.0.0
+	 */
+	public function add_menu_page() {
+		add_menu_page(
+			'Head Inject',
+			'Head Inject',
+			'manage_options',
+			plugin_dir_path(__FILE__) . 'partials/plugin-head-inject-display.php',
+			null,
+			'dashicons-plus-alt',
+			20
+		);
+	}
+
+
+
 }
